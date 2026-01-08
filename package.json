@@ -1,0 +1,12 @@
+{
+  "name": "second-wind",
+  "version": "1.0.0",
+  "description": "Site Second Wind - Agence de communication digitale",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.5.1"
+  }
+}

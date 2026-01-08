@@ -6,131 +6,483 @@
   <title>Second Wind - Agence de communication digitale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Mmxa8YyXcXwjlzAIXazhbugzuDUFcPRl1BDpRP70dNDO7xjoMnIKh4j/wcgUp3NEPoPFcAckS4iigFsBV2x6kA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="icon" type="image/png" href="Icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-logo">
+      <img src="Logo Second Windz 600.png" alt="Second Wind" class="logo-fill">
+    </div>
+  </div>
+
   <header class="topbar">
     <div class="brand">
-      <img src="Logo Second Windz 600.png" alt="Second Wind">
+      <a href="index.html"><img src="Logo Second Windz 600.png" alt="Second Wind"></a>
     </div>
-    <nav class="nav">
-      <a href="#expertises">Expertise</a>
-      <a href="#projets">Projets</a>
-      <a href="#actus">Nos Actus</a>
+    <nav class="nav pills">
+      <a href="expertises.html">Expertise</a>
+      <a href="projets.html">Projets</a>
+      <a href="actus.html">Nos Actus</a>
     </nav>
-    <a class="btn ghost" href="#contact">Nous Contacter</a>
+    <a class="btn ghost" href="contact.html">Nous Contacter</a>
   </header>
 
   <main class="page">
     <section class="hero" id="contact">
-      <div class="hero-copy">
-        <p class="label">Second Wind</p>
-        <h1>Donner un second souffle à votre marque !</h1>
-        <p class="lead">Augmentez votre visibilité, et votre croissance.</p>
+      <div class="hero-left">
+        <h1 class="hero-title">
+          <span class="hero-title-text">Second Wind</span>
+          <img class="hero-title-logo" src="Icon.png" alt="Logo Second Wind">
+        </h1>
+        <p class="lead">Donner un second souffle à votre marque !</p>
         <div class="actions">
           <a class="btn primary" href="#devis">Demander un devis</a>
         </div>
-        <p class="mission">Notre Mission&nbsp;: Redynamiser Votre Présence</p>
       </div>
-      <div class="hero-visual">
-        <div class="hero-image main">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Réunion d'équipe">
-        </div>
-        <div class="hero-image inset">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Portrait marketing">
-        </div>
+      <div class="hero-visual main-visual">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80" alt="Réunion d'équipe">
       </div>
     </section>
 
-    <section class="intro" id="projets">
-      <p>Parce que vous êtes unique, nous vous accompagnons pour rendre la création ou la dynamisation de votre présence sur le web plus simple et accessible au quotidien.</p>
-      <p>Increase your growth potential and viability.</p>
+    <section class="hero-lower">
+      <div class="hero-desc">
+        <span class="divider"></span>
+        <p>Du rebranding complet au développement de plateformes digitales (web et mobile), en passant par une stratégie de contenu percutante et un engagement communautaire ciblé.</p>
+        <p class="mission">Notre Mission&nbsp;: Redynamiser Votre Présence</p>
+      </div>
+      <div class="hero-title-right">
+        <p>AGENCE DE</p>
+        <p>COMMUNICATION</p>
+        <p>DIGITALE</p>
+      </div>
     </section>
 
     <section class="section" id="expertises">
       <h2>Nos Expertises</h2>
-      <div class="cards three">
-        <article class="card">
-          <div class="thumb">
-            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Création de contenu">
+      <div class="expertise-cards-modern">
+        <article class="expertise-card-modern">
+          <div class="expertise-image-modern">
+            <img src="Production-de-contenu-audiovisuel-4.jpg" alt="Création de contenu">
+            <div class="expertise-overlay">
+              <div class="expertise-icon-modern">
+                <i class="fa-solid fa-video"></i>
+              </div>
+            </div>
           </div>
-          <h3>Création de Contenu</h3>
-          <p>Développez votre visibilité et engagez votre audience avec des contenus originaux.</p>
+          <div class="expertise-content-modern">
+            <h3>Création de Contenu</h3>
+            <p>Nous assurons la visibilité de votre renaissance avec des stratégies <strong>référencement naturel</strong> et publicité payante pointues, nous propulsons votre marque en tête des recherches pour garantir un trafic qualifié et une croissance rapide.</p>
+            <a href="expertises.html" class="expertise-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
-        <article class="card">
-          <div class="thumb">
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Marketing d'influence">
+
+        <article class="expertise-card-modern">
+          <div class="expertise-image-modern">
+            <img src="ZeratoR,_mégaphone_en_main,_lors_du_ZEVENT_2025.jpg" alt="Marketing d'influence">
+            <div class="expertise-overlay">
+              <div class="expertise-icon-modern">
+                <i class="fa-solid fa-users"></i>
+              </div>
+            </div>
           </div>
-          <h3>Marketing de l'influence</h3>
-          <p>Créez et optimisez des partenariats avec des influenceurs pertinents.</p>
+          <div class="expertise-content-modern">
+            <h3>Marketing de l'influence</h3>
+            <p>Nous connectons votre marque aux influenceurs <strong>pertinents</strong> pour des campagnes authentiques qui maximisent votre portée et votre crédibilité.</p>
+            <a href="expertises.html" class="expertise-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
-        <article class="card">
-          <div class="thumb">
-            <img src="https://images.unsplash.com/photo-1504691342899-40a3f3e72832?auto=format&fit=crop&w=900&q=80" alt="SEO et SEA">
+
+        <article class="expertise-card-modern">
+          <div class="expertise-image-modern">
+            <img src="différence-seo-et-sea.png" alt="SEO et SEA">
+            <div class="expertise-overlay">
+              <div class="expertise-icon-modern">
+                <i class="fa-solid fa-search"></i>
+              </div>
+            </div>
           </div>
-          <h3>SEO &amp; SEA</h3>
-          <p>Concevez et déployez des stratégies de visibilité pour assurer votre croissance.</p>
+          <div class="expertise-content-modern">
+            <h3>SEO &amp; SEA</h3>
+            <p>Nous assurons la visibilité de votre renaissance avec des stratégies <strong>référencement naturel</strong> et publicité payante pointues, nous propulsons votre marque en tête des recherches pour garantir un trafic qualifié et une croissance rapide.</p>
+            <a href="expertises.html" class="expertise-link">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </article>
       </div>
     </section>
 
+    <!-- Partners Section -->
+    <section class="section partners-section">
+      <h2>Ils nous font confiance</h2>
+      <div class="partners-slider">
+        <div class="partners-track">
+          <div class="partner-logo">
+            <img src="logos/necc.png" alt="NECC">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gozulting.png" alt="Gozulting">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/mixup.png" alt="MixUp">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/bandai-namco.png" alt="Bandai Namco">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/adecco.png" alt="Adecco Group">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gametek.png" alt="GameTek Lyon">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/saint-fons.png" alt="Mairie Saint Fons">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/geekali.png" alt="GeekAli Festival">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/zqsd.png" alt="ZQSD">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gameonly.png" alt="GameOnly">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/ladose.png" alt="LaDose.net">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/japan-impact.png" alt="Japan Impact">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/bnp-paribas.png" alt="BNP Paribas">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/sgn.png" alt="Student Gaming Network">
+          </div>
+          <!-- Duplicate for infinite loop -->
+          <div class="partner-logo">
+            <img src="logos/necc.png" alt="NECC">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gozulting.png" alt="Gozulting">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/mixup.png" alt="MixUp">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/bandai-namco.png" alt="Bandai Namco">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/adecco.png" alt="Adecco Group">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gametek.png" alt="GameTek Lyon">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/saint-fons.png" alt="Mairie Saint Fons">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/geekali.png" alt="GeekAli Festival">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/zqsd.png" alt="ZQSD">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/gameonly.png" alt="GameOnly">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/ladose.png" alt="LaDose.net">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/japan-impact.png" alt="Japan Impact">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/bnp-paribas.png" alt="BNP Paribas">
+          </div>
+          <div class="partner-logo">
+            <img src="logos/sgn.png" alt="Student Gaming Network">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section soft" id="actus">
-      <h2>Nos Actus</h2>
+      <div class="section-header-with-btn">
+        <h2>Nos Actus</h2>
+        <a href="actus.html" class="btn-secondary">Voir toutes nos actus <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
       <div class="cards three compact">
         <article class="card">
           <div class="thumb">
+            <span class="badge badge-strategie">Stratégie</span>
             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Actualité">
           </div>
-          <h3>Stratégies innovantes</h3>
+          <h3>Lancement de notre nouvelle offre de rebranding 360°</h3>
+          <p>Découvrez comment nous aidons les marques à se réinventer complètement avec notre approche holistique du rebranding.</p>
         </article>
         <article class="card">
           <div class="thumb">
+            <span class="badge badge-communication">Communication</span>
             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Actualité">
           </div>
-          <h3>Communications ciblées</h3>
+          <h3>Les tendances communication digitale 2025</h3>
+          <p>Notre analyse des stratégies qui vont marquer l'année : IA générative, authenticité et engagement communautaire.</p>
         </article>
         <article class="card">
           <div class="thumb">
+            <span class="badge badge-creation">Création</span>
             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Actualité">
           </div>
-          <h3>Projets &amp; campagnes</h3>
+          <h3>Success story : +250% de visibilité en 6 mois</h3>
+          <p>Retour sur notre dernière campagne qui a propulsé une startup tech au sommet de son marché grâce à notre stratégie SEO.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projets">
+      <div class="section-header-with-btn">
+        <h2>Nos Projets</h2>
+        <a href="projets.html" class="btn-secondary">Voir tous nos projets <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <p class="section-subtitle">Découvrez nos réalisations qui ont transformé la présence digitale de nos clients</p>
+      <div class="cards projects">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Projet TechStart">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Rebranding & SEO</span>
+            <h3>TechStart Innovation</h3>
+            <p>Refonte complète de l'identité visuelle et stratégie SEO qui a propulsé la startup en tête des recherches dans son secteur.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-value">+250%</span>
+                <span class="stat-label">Visibilité</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">+180%</span>
+                <span class="stat-label">Trafic</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">6 mois</span>
+                <span class="stat-label">Durée</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Projet FashionLux">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Marketing d'influence</span>
+            <h3>FashionLux Paris</h3>
+            <p>Campagne d'influence stratégique avec des créateurs de contenu ciblés, générant un engagement massif sur les réseaux sociaux.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-value">2M+</span>
+                <span class="stat-label">Impressions</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">+320%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">15</span>
+                <span class="stat-label">Influenceurs</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=80" alt="Projet GreenEco">
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Contenu & Community</span>
+            <h3>GreenEco Solutions</h3>
+            <p>Création de contenu engageant et gestion communautaire qui ont transformé une marque locale en référence nationale de l'écologie.</p>
+            <div class="project-stats">
+              <div class="stat">
+                <span class="stat-value">50K+</span>
+                <span class="stat-label">Followers</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">+400%</span>
+                <span class="stat-label">Engagement</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">12 mois</span>
+                <span class="stat-label">Durée</span>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="section" id="atouts">
       <h2>Nos Atouts</h2>
+      <p class="atouts-subtitle">Les qualités indispensables à la réussite de votre Marketing et Communication.</p>
+      <p class="atouts-cta">Augmentez votre visibilité : pourquoi choisir notre agence ?</p>
       <div class="atouts-grid">
         <div class="atout">
-          <i class="fa-solid fa-bullseye"></i>
-          <p>Effet garanti</p>
+          <div class="atout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+          </div>
+          <p>Efficacité</p>
         </div>
         <div class="atout">
-          <i class="fa-solid fa-handshake"></i>
-          <p>Approche client</p>
+          <div class="atout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"/></svg>
+          </div>
+          <p>Approche Client</p>
         </div>
         <div class="atout">
-          <i class="fa-solid fa-layer-group"></i>
-          <p>Alignement stratégique</p>
+          <div class="atout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M192 104.8c0-9.2-5.8-17.3-13.2-22.8C167.2 73.3 160 61.3 160 48c0-26.5 28.7-48 64-48s64 21.5 64 48c0 13.3-7.2 25.3-18.8 34c-7.4 5.5-13.2 13.6-13.2 22.8c0 12.8 10.4 23.2 23.2 23.2H336c26.5 0 48 21.5 48 48v56.8c0 12.8 10.4 23.2 23.2 23.2c9.2 0 17.3-5.8 22.8-13.2c8.7-11.6 20.7-18.8 34-18.8c26.5 0 48 28.7 48 64s-21.5 64-48 64c-13.3 0-25.3-7.2-34-18.8c-5.5-7.4-13.6-13.2-22.8-13.2c-12.8 0-23.2 10.4-23.2 23.2V464c0 26.5-21.5 48-48 48H279.2c-12.8 0-23.2-10.4-23.2-23.2c0-9.2 5.8-17.3 13.2-22.8c11.6-8.7 18.8-20.7 18.8-34c0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34c7.4 5.5 13.2 13.6 13.2 22.8c0 12.8-10.4 23.2-23.2 23.2H48c-26.5 0-48-21.5-48-48V343.2C0 330.4 10.4 320 23.2 320c9.2 0 17.3 5.8 22.8 13.2C54.7 344.8 66.7 352 80 352c26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8C40.5 250.2 32.4 256 23.2 256C10.4 256 0 245.6 0 232.8V176c0-26.5 21.5-48 48-48H168.8c12.8 0 23.2-10.4 23.2-23.2z"/></svg>
+          </div>
+          <p>Alignement Stratégique</p>
         </div>
         <div class="atout">
-          <i class="fa-solid fa-users"></i>
-          <p>Disponibilité</p>
+          <div class="atout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
+          </div>
+          <p>Disponible</p>
         </div>
         <div class="atout">
-          <i class="fa-solid fa-bolt"></i>
-          <p>Réactivité</p>
+          <div class="atout-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.2s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/></svg>
+          </div>
+          <p>Réutilisabilité</p>
         </div>
-        <div class="atout">
-          <i class="fa-solid fa-clock"></i>
-          <p>Durabilité</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="devis">
+      <h2>Nous Contacter</h2>
+      <p class="section-subtitle">Prêt à donner un second souffle à votre marque ? Parlons de votre projet !</p>
+      
+      <div class="contact-container">
+        <div class="contact-form-wrapper">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Nom & Prénom *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Entreprise</label>
+              <input type="text" id="company" name="company">
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="service">Service souhaité *</label>
+              <select id="service" name="service" required>
+                <option value="">Sélectionnez un service</option>
+                <option value="rebranding">Rebranding complet</option>
+                <option value="web-mobile">Développement Web & Mobile</option>
+                <option value="content">Création de Contenu</option>
+                <option value="seo-sea">SEO & SEA</option>
+                <option value="influence">Marketing d'Influence</option>
+                <option value="community">Gestion Communautaire</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="message">Votre projet *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet et vos objectifs..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn primary submit-btn">Envoyer ma demande</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <p>contact@secondwind-agency.fr</p>
+          </div>
+          
+          <div class="info-card">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Téléphone</h3>
+            <p>+33 1 23 45 67 89</p>
+          </div>
+          
+          <div class="info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Adresse</h3>
+            <p>15 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+          </div>
+          
+          <div class="info-card social">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="Logo Second Windz 600.png" alt="Second Wind" class="footer-logo">
+        <p>Donner un second souffle à votre marque</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <a href="#expertises">Nos Expertises</a>
+          <a href="#projets">Nos Projets</a>
+          <a href="#actus">Nos Actus</a>
+          <a href="#atouts">Nos Atouts</a>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="#expertises">Rebranding</a>
+          <a href="#expertises">Web & Mobile</a>
+          <a href="#expertises">Marketing d'Influence</a>
+          <a href="#expertises">SEO & SEA</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="#devis">Demander un devis</a>
+          <a href="#contact">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Second Wind Agency. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
 

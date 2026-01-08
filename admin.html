@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Second Wind</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Login Screen (shown by default) -->
+  <div id="loginScreen" class="admin-login">
+    <div class="login-container">
+      <img src="Logo Second Windz 600.png" alt="Second Wind Logo" class="login-logo">
+      <h1>Administration</h1>
+      <form id="loginForm" class="login-form">
+        <div class="form-group">
+          <label for="username">Nom d'utilisateur</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard (hidden by default) -->
+  <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="admin-header-content">
+        <img src="Logo Second Windz 600.png" alt="Second Wind" class="admin-logo">
+        <div class="admin-user">
+          <span id="adminUsername">Admin</span>
+          <button id="logoutBtn" class="btn-logout"><i class="fa-solid fa-sign-out"></i> Déconnexion</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <nav class="admin-nav">
+          <button class="admin-nav-btn active" data-section="projets">
+            <i class="fa-solid fa-folder-open"></i> Projets
+          </button>
+          <button class="admin-nav-btn" data-section="actus">
+            <i class="fa-solid fa-newspaper"></i> Actualités
+          </button>
+          <button class="admin-nav-btn" data-section="site">
+            <i class="fa-solid fa-globe"></i> Voir le site
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-content">
+        <!-- Projects Section -->
+        <section id="projetsSection" class="admin-section active">
+          <div class="section-header-admin">
+            <h2>Gestion des Projets</h2>
+            <button id="addProjectBtn" class="btn btn-primary">
+              <i class="fa-solid fa-plus"></i> Nouveau projet
+            </button>
+          </div>
+
+          <div class="admin-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Titre</th>
+                  <th>Description</th>
+                  <th>Tags</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="projectsList">
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100" alt="" class="table-thumb"></td>
+                  <td>TechStart</td>
+                  <td>Site web moderne pour startup tech</td>
+                  <td><span class="tag">Web Design</span> <span class="tag">Branding</span></td>
+                  <td>
+                    <button class="btn-icon edit-project" data-id="1"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-project" data-id="1"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=100" alt="" class="table-thumb"></td>
+                  <td>FashionLux</td>
+                  <td>Boutique en ligne élégante</td>
+                  <td><span class="tag">E-commerce</span> <span class="tag">UX/UI</span></td>
+                  <td>
+                    <button class="btn-icon edit-project" data-id="2"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-project" data-id="2"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=100" alt="" class="table-thumb"></td>
+                  <td>GreenEco</td>
+                  <td>Application écologique</td>
+                  <td><span class="tag">Mobile</span> <span class="tag">Strategy</span></td>
+                  <td>
+                    <button class="btn-icon edit-project" data-id="3"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-project" data-id="3"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Actus Section -->
+        <section id="actusSection" class="admin-section">
+          <div class="section-header-admin">
+            <h2>Gestion des Actualités</h2>
+            <button id="addActuBtn" class="btn btn-primary">
+              <i class="fa-solid fa-plus"></i> Nouvelle actualité
+            </button>
+          </div>
+
+          <div class="admin-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Titre</th>
+                  <th>Catégorie</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="actusList">
+                <tr>
+                  <td><img src="Production-de-contenu-audiovisuel-4.jpg" alt="" class="table-thumb"></td>
+                  <td>L'Importance du Rebranding</td>
+                  <td><span class="badge">Tendances</span></td>
+                  <td>15 Déc 2024</td>
+                  <td>
+                    <button class="btn-icon edit-actu" data-id="1"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-actu" data-id="1"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="ZeratoR,_mégaphone_en_main,_lors_du_ZEVENT_2025.jpg" alt="" class="table-thumb"></td>
+                  <td>Design Trends 2025</td>
+                  <td><span class="badge">Design</span></td>
+                  <td>12 Déc 2024</td>
+                  <td>
+                    <button class="btn-icon edit-actu" data-id="2"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-actu" data-id="2"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="différence-seo-et-sea.png" alt="" class="table-thumb"></td>
+                  <td>Comment réussir votre stratégie digitale</td>
+                  <td><span class="badge">Stratégie</span></td>
+                  <td>8 Déc 2024</td>
+                  <td>
+                    <button class="btn-icon edit-actu" data-id="3"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn-icon delete-actu" data-id="3"><i class="fa-solid fa-trash"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal for Add/Edit Project -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="projectModalTitle">Nouveau Projet</h3>
+        <button class="modal-close" id="closeProjectModal">&times;</button>
+      </div>
+      <form id="projectForm" class="admin-form">
+        <input type="hidden" id="projectId" name="id">
+        
+        <div class="form-group">
+          <label for="projectTitle">Titre du projet *</label>
+          <input type="text" id="projectTitle" name="title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="projectDescription">Description *</label>
+          <textarea id="projectDescription" name="description" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="projectImage">URL de l'image *</label>
+          <input type="url" id="projectImage" name="image" placeholder="https://..." required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectViews">Vues</label>
+            <input type="text" id="projectViews" name="views" placeholder="50k">
+          </div>
+          <div class="form-group">
+            <label for="projectEngagement">Engagement</label>
+            <input type="text" id="projectEngagement" name="engagement" placeholder="+40%">
+          </div>
+          <div class="form-group">
+            <label for="projectConversion">Conversion</label>
+            <input type="text" id="projectConversion" name="conversion" placeholder="+25%">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectTags">Tags (séparés par des virgules)</label>
+          <input type="text" id="projectTags" name="tags" placeholder="Web Design, Branding, SEO">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="projectHomepage" name="homepage" checked>
+            <span>Afficher sur la page d'accueil</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelProject">Annuler</button>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for Add/Edit Actu -->
+  <div id="actuModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="actuModalTitle">Nouvelle Actualité</h3>
+        <button class="modal-close" id="closeActuModal">&times;</button>
+      </div>
+      <form id="actuForm" class="admin-form">
+        <input type="hidden" id="actuId" name="id">
+        
+        <div class="form-group">
+          <label for="actuTitle">Titre de l'article *</label>
+          <input type="text" id="actuTitle" name="title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="actuExcerpt">Résumé *</label>
+          <textarea id="actuExcerpt" name="excerpt" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="actuContent">Contenu complet *</label>
+          <textarea id="actuContent" name="content" rows="6" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="actuImage">URL de l'image *</label>
+          <input type="url" id="actuImage" name="image" placeholder="https://..." required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="actuCategory">Catégorie *</label>
+            <select id="actuCategory" name="category" required>
+              <option value="">Sélectionner...</option>
+              <option value="Tendances">Tendances</option>
+              <option value="Design">Design</option>
+              <option value="Stratégie">Stratégie</option>
+              <option value="Technologie">Technologie</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Success Story">Success Story</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="actuDate">Date de publication</label>
+            <input type="date" id="actuDate" name="date">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="actuAuthor">Auteur</label>
+          <input type="text" id="actuAuthor" name="author" placeholder="Second Wind Team">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="actuHomepage" name="homepage" checked>
+            <span>Afficher sur la page d'accueil</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancelActu">Annuler</button>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

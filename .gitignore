@@ -1,0 +1,10 @@
+# Fichiers à ignorer
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.vercel
+*.swp
+*.swo
+*~

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous Contacter - Second Wind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-Mmxa8YyXcXwjlzAIXazhbugzuDUFcPRl1BDpRP70dNDO7xjoMnIKh4j/wcgUp3NEPoPFcAckS4iigFsBV2x6kA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="icon" type="image/png" href="Icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-logo">
+      <img src="Logo Second Windz 600.png" alt="Second Wind" class="logo-fill">
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <a href="index.html"><img src="Logo Second Windz 600.png" alt="Second Wind"></a>
+    </div>
+    <nav class="nav pills">
+      <a href="expertises.html">Expertise</a>
+      <a href="projets.html">Projets</a>
+      <a href="actus.html">Nos Actus</a>
+    </nav>
+    <a class="btn ghost active" href="contact.html">Nous Contacter</a>
+  </header>
+
+  <main class="page">
+    <section class="page-header">
+      <h1>Nous Contacter</h1>
+      <p class="page-intro">Prêt à donner un second souffle à votre marque ? Parlons de votre projet !</p>
+    </section>
+
+    <section class="section contact-section">
+      <div class="contact-container">
+        <div class="contact-form-wrapper">
+          <h2>Demander un devis</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Nom & Prénom *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Entreprise</label>
+              <input type="text" id="company" name="company">
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="service">Service souhaité *</label>
+              <select id="service" name="service" required>
+                <option value="">Sélectionnez un service</option>
+                <option value="rebranding">Rebranding complet</option>
+                <option value="web-mobile">Développement Web & Mobile</option>
+                <option value="content">Création de Contenu</option>
+                <option value="seo-sea">SEO & SEA</option>
+                <option value="influence">Marketing d'Influence</option>
+                <option value="community">Gestion Communautaire</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="budget">Budget estimé</label>
+              <select id="budget" name="budget">
+                <option value="">Sélectionnez une fourchette</option>
+                <option value="5k-10k">5 000€ - 10 000€</option>
+                <option value="10k-25k">10 000€ - 25 000€</option>
+                <option value="25k-50k">25 000€ - 50 000€</option>
+                <option value="50k+">50 000€ et plus</option>
+              </select>
+            </div>
+            
+            <div class="form-group full-width">
+              <label for="message">Votre projet *</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Décrivez-nous votre projet, vos objectifs et vos attentes..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn primary submit-btn">Envoyer ma demande</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Téléphone</h3>
+            <p><a href="tel:+33763182828">07 63 18 28 28</a></p>
+            <p class="info-description">Lun-Ven : 9h-18h</p>
+          </div>
+          
+          <div class="info-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <h3>Adresse</h3>
+            <p>Lyon 69003, France</p>
+            <p class="info-description">Rendez-vous sur demande</p>
+          </div>
+          
+          <div class="info-card social">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/second.w.i.n.d/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="logos/instagram.png" alt="Instagram" class="social-logo">
+              </a>
+            </div>
+            <p class="info-description">Rejoignez notre communauté</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Questions fréquentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="fa-solid fa-circle-question"></i> Quels sont vos délais de réalisation ?</h3>
+          <p>Les délais varient selon la complexité du projet. Un rebranding complet prend généralement 2-3 mois, tandis qu'un site web peut être livré en 4-8 semaines.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3><i class="fa-solid fa-circle-question"></i> Travaillez-vous avec des startups ?</h3>
+          <p>Absolument ! Nous adorons accompagner les startups dans leur croissance. Nous proposons des formules adaptées aux budgets émergents.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3><i class="fa-solid fa-circle-question"></i> Proposez-vous un suivi après livraison ?</h3>
+          <p>Oui, tous nos projets incluent un suivi post-livraison. Nous restons disponibles pour les ajustements et pouvons proposer des contrats de maintenance.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3><i class="fa-solid fa-circle-question"></i> Comment se passe la collaboration ?</h3>
+          <p>Nous fonctionnons en mode agile avec des points réguliers. Vous avez accès à un espace projet pour suivre l'avancement en temps réel.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="Logo Second Windz 600.png" alt="Second Wind" class="footer-logo">
+        <p>Donner un second souffle à votre marque</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="expertises.html">Nos Expertises</a>
+          <a href="projets.html">Nos Projets</a>
+          <a href="actus.html">Nos Actus</a>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="expertises.html">Rebranding</a>
+          <a href="expertises.html">Web & Mobile</a>
+          <a href="expertises.html">Marketing d'Influence</a>
+          <a href="expertises.html">SEO & SEA</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="contact.html">Demander un devis</a>
+          <a href="contact.html">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Second Wind Agency. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
