@@ -9,9 +9,10 @@
     "build": "echo 'Build complete'"
   },
   "dependencies": {
-    "@vercel/postgres": "^0.5.1"
+    "pg": "^8.20.0"
   },
   "devDependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }

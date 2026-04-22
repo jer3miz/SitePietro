@@ -1,11 +1,12 @@
-import { sql } from '@vercel/postgres';
+import pg from 'pg';
+const { Pool } = pg;
+const pool = new Pool({ connectionString: process.env.POSTGRES_URL, ssl: { rejectUnauthorized: false } });
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  
+
   try {
-    // Create projects table
-    await sql`
+    await pool.query(`
       CREATE TABLE IF NOT EXISTS projects (
         id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
@@ -18,10 +19,9 @@ export default async function handler(req, res) {
         homepage BOOLEAN DEFAULT true,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
-    `;
+    `);
 
-    // Create actus table
-    await sql`
+    await pool.query(`
       CREATE TABLE IF NOT EXISTS actus (
         id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
@@ -34,12 +34,9 @@ export default async function handler(req, res) {
         homepage BOOLEAN DEFAULT true,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
-    `;
+    `);
 
-    return res.status(200).json({ 
-      message: 'Database initialized successfully',
-      tables: ['projects', 'actus']
-    });
+    return res.status(200).json({ message: 'Base de données initialisée', tables: ['projects', 'actus'] });
   } catch (error) {
     console.error('Init error:', error);
     return res.status(500).json({ error: error.message });

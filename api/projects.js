@@ -1,59 +1,40 @@
-import { sql } from '@vercel/postgres';
+import pg from 'pg';
+const { Pool } = pg;
+const pool = new Pool({ connectionString: process.env.POSTGRES_URL, ssl: { rejectUnauthorized: false } });
 
 export default async function handler(req, res) {
-  // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
+  if (req.method === 'OPTIONS') return res.status(200).end();
 
   try {
     if (req.method === 'GET') {
-      // Get all projects
-      const { rows } = await sql`
-        SELECT * FROM projects ORDER BY id DESC
-      `;
+      const { rows } = await pool.query('SELECT * FROM projects ORDER BY id DESC');
       return res.status(200).json(rows);
     }
 
     if (req.method === 'POST') {
-      // Create new project
       const { title, description, image, views, engagement, conversion, tags, homepage } = req.body;
-      
-      const { rows } = await sql`
-        INSERT INTO projects (title, description, image, views, engagement, conversion, tags, homepage)
-        VALUES (${title}, ${description}, ${image}, ${views}, ${engagement}, ${conversion}, ${JSON.stringify(tags)}, ${homepage})
-        RETURNING *
-      `;
-      
+      const { rows } = await pool.query(
+        'INSERT INTO projects (title, description, image, views, engagement, conversion, tags, homepage) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *',
+        [title, description, image, views, engagement, conversion, JSON.stringify(tags), homepage]
+      );
       return res.status(201).json(rows[0]);
     }
 
     if (req.method === 'PUT') {
-      // Update project
       const { id, title, description, image, views, engagement, conversion, tags, homepage } = req.body;
-      
-      const { rows } = await sql`
-        UPDATE projects
-        SET title = ${title}, description = ${description}, image = ${image},
-            views = ${views}, engagement = ${engagement}, conversion = ${conversion},
-            tags = ${JSON.stringify(tags)}, homepage = ${homepage}
-        WHERE id = ${id}
-        RETURNING *
-      `;
-      
+      const { rows } = await pool.query(
+        'UPDATE projects SET title=$1, description=$2, image=$3, views=$4, engagement=$5, conversion=$6, tags=$7, homepage=$8 WHERE id=$9 RETURNING *',
+        [title, description, image, views, engagement, conversion, JSON.stringify(tags), homepage, id]
+      );
       return res.status(200).json(rows[0]);
     }
 
     if (req.method === 'DELETE') {
-      // Delete project
-      const { id } = req.query;
-      
-      await sql`DELETE FROM projects WHERE id = ${id}`;
-      
+      await pool.query('DELETE FROM projects WHERE id=$1', [req.query.id]);
       return res.status(200).json({ message: 'Project deleted' });
     }
 
