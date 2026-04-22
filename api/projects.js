@@ -1,11 +1,21 @@
 import pg from 'pg';
+import jwt from 'jsonwebtoken';
+
 const { Pool } = pg;
 const pool = new Pool({ connectionString: process.env.POSTGRES_URL, ssl: { rejectUnauthorized: false } });
+
+function verifyToken(req) {
+  const auth = req.headers.authorization;
+  if (!auth?.startsWith('Bearer ')) return null;
+  try {
+    return jwt.verify(auth.split(' ')[1], process.env.JWT_SECRET);
+  } catch { return null; }
+}
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
@@ -13,6 +23,11 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
       const { rows } = await pool.query('SELECT * FROM projects ORDER BY id DESC');
       return res.status(200).json(rows);
+    }
+
+    // Routes protégées
+    if (!verifyToken(req)) {
+      return res.status(401).json({ error: 'Non autorisé' });
     }
 
     if (req.method === 'POST') {

@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "routes": [
+    { "src": "/admin", "dest": "/admin.html" }
+  ]
 }
