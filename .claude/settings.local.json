@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /b \"c:\\\\Users\\\\jerem\\\\OneDrive\\\\Bureau\\\\dev\\\\SitePietro\")",
+      "Bash(vercel --version)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npx vercel *)",
+      "Bash(node server.js)",
+      "Bash(curl -s http://localhost:3000/api/projects)",
+      "Bash(curl -s http://localhost:3000/api/actus)",
+      "Bash(kill %1)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(git remote *)",
+      "Bash(git commit -m 'fix: outputDirectory racine pour Vercel *)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
