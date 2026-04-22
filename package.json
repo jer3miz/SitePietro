@@ -2,11 +2,16 @@
   "name": "second-wind",
   "version": "1.0.0",
   "description": "Site Second Wind - Agence de communication digitale",
+  "type": "module",
   "scripts": {
+    "local": "node server.js",
     "dev": "vercel dev",
     "build": "echo 'Build complete'"
   },
   "dependencies": {
     "@vercel/postgres": "^0.5.1"
+  },
+  "devDependencies": {
+    "express": "^5.2.1"
   }
 }

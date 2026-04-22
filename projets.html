@@ -243,5 +243,37 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (async () => {
+      try {
+        const res = await fetch('/api/projects');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) return;
+        const container = document.querySelector('.cards.projects');
+        container.innerHTML = data.map(p => {
+          const tags = Array.isArray(p.tags) ? p.tags : [];
+          return `
+            <article class="project-card">
+              <div class="project-image">
+                <img src="${p.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'}" alt="${p.title}">
+              </div>
+              <div class="project-content">
+                ${tags[0] ? `<span class="project-tag">${tags[0]}</span>` : ''}
+                <h3>${p.title}</h3>
+                <p>${p.description || ''}</p>
+                <div class="project-stats">
+                  ${p.views ? `<div class="stat"><span class="stat-value">${p.views}</span><span class="stat-label">Vues</span></div>` : ''}
+                  ${p.engagement ? `<div class="stat"><span class="stat-value">${p.engagement}</span><span class="stat-label">Engagement</span></div>` : ''}
+                  ${p.conversion ? `<div class="stat"><span class="stat-value">${p.conversion}</span><span class="stat-label">Conversion</span></div>` : ''}
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>

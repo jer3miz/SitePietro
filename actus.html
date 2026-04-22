@@ -194,5 +194,42 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (async () => {
+      try {
+        const res = await fetch('/api/actus');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) return;
+        const container = document.querySelector('.actus-grid');
+        container.innerHTML = data.map((a, i) => {
+          const isFirst = i === 0;
+          const dateStr = a.date
+            ? new Date(a.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+            : '';
+          const catClass = (a.category || '').toLowerCase()
+            .normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-');
+          return `
+            <article class="actu-card${isFirst ? ' featured' : ''}">
+              <div class="actu-image">
+                <img src="${a.image || 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=80'}" alt="${a.title}">
+                ${isFirst ? '<span class="actu-badge featured-badge">À la une</span>' : ''}
+              </div>
+              <div class="actu-content">
+                <div class="actu-meta">
+                  <span class="actu-category ${catClass}">${a.category || ''}</span>
+                  ${dateStr ? `<span class="actu-date"><i class="fa-regular fa-calendar"></i> ${dateStr}</span>` : ''}
+                </div>
+                ${isFirst ? `<h2>${a.title}</h2>` : `<h3>${a.title}</h3>`}
+                <p>${a.excerpt || ''}</p>
+                <a href="#" class="btn-link">Lire la suite <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </article>
+          `;
+        }).join('');
+      } catch (e) {}
+    })();
+  </script>
 </body>
 </html>

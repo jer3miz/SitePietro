@@ -164,11 +164,14 @@ adminNavBtns.forEach(btn => {
 async function fetchProjects() {
   try {
     const response = await fetch(`${API_URL}/projects`);
-    projects = await response.json();
-    renderProjects();
+    if (!response.ok) return;
+    const data = await response.json();
+    if (Array.isArray(data)) {
+      projects = data;
+      renderProjects();
+    }
   } catch (error) {
     console.error('Error fetching projects:', error);
-    alert('Erreur lors du chargement des projets');
   }
 }
 
@@ -180,10 +183,11 @@ async function saveProject(projectData) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(projectData)
     });
+    if (!response.ok) throw new Error('API error');
     return await response.json();
   } catch (error) {
     console.error('Error saving project:', error);
-    alert('Erreur lors de la sauvegarde du projet');
+    alert('Erreur lors de la sauvegarde du projet. Vérifiez que la base de données est configurée sur Vercel.');
   }
 }
 
@@ -199,11 +203,14 @@ async function deleteProjectAPI(id) {
 async function fetchActus() {
   try {
     const response = await fetch(`${API_URL}/actus`);
-    actus = await response.json();
-    renderActus();
+    if (!response.ok) return;
+    const data = await response.json();
+    if (Array.isArray(data)) {
+      actus = data;
+      renderActus();
+    }
   } catch (error) {
     console.error('Error fetching actus:', error);
-    alert('Erreur lors du chargement des actualités');
   }
 }
 
@@ -215,10 +222,11 @@ async function saveActu(actuData) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(actuData)
     });
+    if (!response.ok) throw new Error('API error');
     return await response.json();
   } catch (error) {
     console.error('Error saving actu:', error);
-    alert('Erreur lors de la sauvegarde de l\'actualité');
+    alert('Erreur lors de la sauvegarde de l\'actualité. Vérifiez que la base de données est configurée sur Vercel.');
   }
 }
 

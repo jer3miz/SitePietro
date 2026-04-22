@@ -8,5 +8,4 @@ node_modules/
 *.swp
 *.swo
 *~
-
-.vercel
+local-db.json
