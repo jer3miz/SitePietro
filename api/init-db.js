@@ -2,7 +2,8 @@ import pg from 'pg';
 import bcrypt from 'bcryptjs';
 
 const { Pool } = pg;
-const pool = new Pool({ connectionString: (process.env.POSTGRES_URL || '').replace('sslmode=require', 'sslmode=no-verify'), ssl: { rejectUnauthorized: false } });
+const dbUrl = new URL((process.env.POSTGRES_URL || '').replace(/^postgres:/, 'postgresql:'));
+const pool = new Pool({ host: dbUrl.hostname, port: parseInt(dbUrl.port), database: dbUrl.pathname.slice(1), user: dbUrl.username, password: dbUrl.password, ssl: { rejectUnauthorized: false } });
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
