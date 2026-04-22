@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const { Pool } = pg;
-const pool = new Pool({ connectionString: process.env.POSTGRES_URL, ssl: { rejectUnauthorized: false } });
+const pool = new Pool({ connectionString: (process.env.POSTGRES_URL || '').replace('sslmode=require', 'sslmode=no-verify'), ssl: { rejectUnauthorized: false } });
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -2,7 +2,7 @@ import pg from 'pg';
 import jwt from 'jsonwebtoken';
 
 const { Pool } = pg;
-const pool = new Pool({ connectionString: process.env.POSTGRES_URL, ssl: { rejectUnauthorized: false } });
+const pool = new Pool({ connectionString: (process.env.POSTGRES_URL || '').replace('sslmode=require', 'sslmode=no-verify'), ssl: { rejectUnauthorized: false } });
 
 function verifyToken(req) {
   const auth = req.headers.authorization;
